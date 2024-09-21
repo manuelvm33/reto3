@@ -1,0 +1,203 @@
+/* Updated color palette from Color Hunt */
+:root {
+  --color-primary: #021526;       /* Dark Blue */
+  --color-secondary: #03346E;     /* Light Blue */
+  --color-tertiary: #6EACDA;      /* Turquoise */
+  --color-quaternary: #E2E2B6;    /* Light Cream */
+  --color-text-light: #FFFFFF;    /* White for text */
+  --color-text-dark: #000000;     /* Black for text */
+  --color-nav-background: #6EACDA; /* Turquoise for navigation bar */
+  --color-nav-text: #FFFFFF;      /* White for text in nav */
+  --color-nav-hover-background: #03346E; /* Light Blue on hover */
+  --color-nav-hover-text: #E2E2B6; /* Light Cream for hover text */
+  --color-link-background: #03346E; /* Light Blue for link background */
+  --color-link-text: #E2E2B6;     /* Light Cream for link text */
+  --color-link-hover-background: #021526; /* Dark Blue for link hover background */
+  --color-link-hover-text: #FFFFFF; /* White for link hover text */
+}
+
+/* Basic styling */
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  margin: 0;
+  padding: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+nav {
+  background-color: var(--color-nav-background);
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav a {
+  color: var(--color-nav-text);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+nav a:hover {
+  background-color: var(--color-nav-hover-background);
+  color: var(--color-nav-hover-text);
+  border-radius: 8px;
+  transform: translateY(-4px); /* Lift the button on hover */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
+}
+
+h1, h2, h3 {
+  text-align: center;
+  color: var(--color-text-light);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem auto;
+  border-radius: 50%;
+  transition: transform 0.5s ease;
+}
+
+img:hover {
+  transform: rotate(360deg); /* Rotate the profile picture on hover */
+}
+
+/* Button hover effects for each section */
+a[href="#informacion"] {
+  display: block;
+  margin-top: 1rem;
+  color: var(--color-link-text);
+  background-color: var(--color-link-background);
+  text-decoration: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+a[href="#informacion"]:hover {
+  background-color: var(--color-link-hover-background);
+  color: var(--color-link-hover-text);
+  transform: translateY(-5px) scale(1.05); /* Lift and slightly enlarge */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+/* Sections */
+section {
+  padding: 2rem;
+  margin: 1rem 0;
+  border-radius: 10px;
+  transition: all 0.5s ease;
+}
+
+section:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+section#objetivo {
+  background-color: var(--color-secondary);
+  color: var(--color-text-light);
+}
+
+section#experiencia {
+  background-color: var(--color-tertiary);
+  color: var(--color-text-light);
+}
+
+section#educacion {
+  background-color: var(--color-quaternary);
+  color: var(--color-secondary);
+}
+
+footer {
+  background-color: var(--color-secondary);
+  color: var(--color-text-light);
+  text-align: center;
+  padding: 2rem;
+  margin-top: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-content p {
+  margin: 0.5rem 0;
+}
+
+/* Social media icons */
+.social-media a {
+  color: var(--color-text-light);
+  font-size: 1.8rem;
+  margin: 0 10px;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.social-media a:hover {
+  color: var(--color-quaternary);
+  transform: scale(1.2); /* Enlarge on hover */
+}
+
+/* Animation for fade-in when the page loads */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body {
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  section {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    text-align: center;
+  }
+
+  section {
+    padding: 0.5rem;
+  }
+
+  footer {
+    font-size: 0.8rem;
+  }
+
+  .social-media a {
+    font-size: 1.2rem;
+  }
+}
